@@ -98,29 +98,50 @@
             </div>
         </div>
     </div>
-    <h1>Effects</h1>
     <div class="effects">
-        <div class="effects-column">
-            <div class="effects-column-overlay">
-                <img src="img/street.jpeg" class="street" alt="street in liverpool">
-                <div class="overlayText">Invert</div>
+        <h1>Effects</h1>
+        <div class="image-effects">
+            <div class="effects-column">
+                <div class="effects-column-overlay">
+                    <img src="img/street.jpeg" class="street" alt="street in liverpool">
+                    <div class="overlayText">Invert</div>
+                </div>
             </div>
-        </div>
-        <div class="effects-column">
-            <div class="effects-column-overlay">
-                <img src="img/cathedral.jpeg" class="cathedral" alt="a massive cathedral">
-                <div class="overlayText">Grayscale</div>
+            <div class="effects-column">
+                <div class="effects-column-overlay">
+                    <img src="img/cathedral.jpeg" class="cathedral" alt="a massive cathedral">
+                    <div class="overlayText">Grayscale</div>
+                </div>
             </div>
-        </div>
-        <div class="effects-column">
-            <div class="effects-column-overlay">
-                <img src="img/cathedral_inside.jpeg" class="inside" alt="inside the cathedral">
-                <div class="overlayText">Blur</div>
+            <div class="effects-column">
+                <div class="effects-column-overlay">
+                    <img src="img/cathedral_inside.jpeg" class="inside" alt="inside the cathedral">
+                    <div class="overlayText">Blur</div>
+                </div>
             </div>
         </div>
     </div>
-    <h1>Videos</h1>
+    <div class="upload">
+        <h1>File Upload</h1>
+        <div>
+            <form method="post" enctype="multipart/form-data" action="/">
+                <table>
+                    <tr>
+                        <td>File to upload:</td>
+                        <td><input type="file" name="file" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div th:each="file : ${files}">
+            <img th:src="${file}" alt="uploaded image">
+        </div>
+    </div>
     <div class="videos">
+        <h1>Videos</h1>
         <div class="background">
             <video id="backgroundVideo" autoplay muted loop>
                 <source src="videos/background.mp4" type="video/mp4">
@@ -137,29 +158,6 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/mjmjHAg_15s" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
-        </div>
-    </div>
-    <h1>File Upload</h1>
-    <div class="upload">
-        <div th:if="${message}">
-            <h2 th:text="${message}"></h2>
-        </div>
-
-        <div>
-            <form method="POST" enctype="multipart/form-data" action="/">
-                <table>
-                    <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-                    <tr><td><input type="submit" value="Upload" /></td></tr>
-                </table>
-            </form>
-        </div>
-
-        <div>
-            <ul>
-                <li th:each="file : ${files}">
-                    <a th:href="${file}" th:text="${file}"></a>
-                </li>
-            </ul>
         </div>
     </div>
     <footer>

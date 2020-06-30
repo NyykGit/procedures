@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 @Service
@@ -29,7 +30,8 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public void store(MultipartFile file) {
-        String filename = StringUtils.cleanPath(file.getOriginalFilename());
+
+        String filename = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Failed to store empty file " + filename);

@@ -212,13 +212,16 @@ header .liverpool {
 }
 
 .effects {
-    display: flex;
-    justify-content: space-around;
     margin-top: 10px;
 }
 
 h1 {
     text-align: center;
+}
+
+.image-effects {
+    display: flex;
+    justify-content: space-around;
 }
 
 .effects .effects-column {
@@ -346,6 +349,10 @@ h1 {
 #play:hover {
     background: white;
     color: black;
+}
+
+.upload {
+    margin-top: 20px;
 }
 
 footer {
