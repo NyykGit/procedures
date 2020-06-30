@@ -1,0 +1,361 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Monaco", serif;
+    background-color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;
+    background: #171717;
+    color: white;
+    z-index: 1;
+}
+
+.header-left {
+    width: 20%;
+}
+
+header .manchester {
+    float: left;
+    width: 25%;
+}
+
+header .title {
+    width: 100%;
+}
+
+.england {
+    width: 5%;
+    vertical-align: middle;
+}
+
+header .liverpool {
+    float: right;
+    width: 30%;
+}
+
+.header-right {
+    width: 20%;
+}
+
+.slideshow {
+    display: block;
+    max-width: 1000px;
+    position: relative;
+    margin: 150px auto 0 auto;
+}
+
+.slides {
+    display: none
+}
+
+.previous, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slides:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    margin-left: 15%;
+    margin-top: -11px;
+    color: white;
+    font-size: 32px;
+}
+
+.numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.image {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.dot-row {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkgrey;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: gray;
+}
+
+.gallery h1 {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.column {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.column img {
+    transition: 0.3s;
+}
+
+.column img:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gallery img {
+    width: 100%;
+}
+
+.effects {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.effects .effects-column {
+    width: 30%;
+}
+
+.effects-column img {
+    width: 100%;
+    height: auto;
+    transition: 1.5s;
+}
+
+.effects-column .cathedral:hover {
+    filter: grayscale(100%);
+    transition: 1.5s;
+}
+
+.effects-column .inside:hover {
+    filter: blur(4px);
+    transition: 1.5s;
+}
+
+.effects-column .street:hover {
+    filter: invert(100%);
+    transition: 1.5s;
+}
+
+.effects-column-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.effects-column-overlay:hover img {
+    transition: .3s;
+    transform: scale(1.03);
+}
+
+.effects-column-overlay:hover .overlayText {
+    opacity: 1;
+}
+
+.overlayText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: white;
+    transition: .3s;
+}
+
+.videos {
+    height: 100%;
+    margin-top: 20px;
+}
+
+.videos video {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.videos iframe {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: -999;
+}
+
+.background video {
+    display: block;
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 15%;
+}
+
+.video-gallery video {
+    width: 46.5%;
+}
+
+.video-gallery iframe {
+    height: 445px;
+    width: 46.5%;
+}
+
+.button-background {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+}
+
+#pause {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: white;
+    cursor: pointer;
+}
+
+#pause:hover {
+    background: white;
+    color: black;
+}
+
+#play {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: white;
+    cursor: pointer;
+}
+
+#play:hover {
+    background: white;
+    color: black;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #2a2a2a;
+    color: white;
+    bottom: 0;
+}
+
+footer div {
+    font-size: 12px;
+}
