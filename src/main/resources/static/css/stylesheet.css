@@ -273,6 +273,41 @@ h1 {
     transition: .3s;
 }
 
+.upload {
+    margin-top: 20px;
+}
+
+.upload-content {
+    margin-bottom: 10px;
+}
+
+.upload-content div {
+    display: flex;
+    justify-content: center;
+}
+
+.upload-button {
+    margin-top: 10px;
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: white;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    border: 1px solid black;
+    background: white;
+    color: black;
+}
+
+.upload-image {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .videos {
     height: 100%;
     margin-top: 20px;
@@ -349,10 +384,6 @@ h1 {
 #play:hover {
     background: white;
     color: black;
-}
-
-.upload {
-    margin-top: 20px;
 }
 
 footer {

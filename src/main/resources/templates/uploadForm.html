@@ -59,19 +59,19 @@
         <h1>Gallery</h1>
         <div class="row">
             <div class="column">
-                <img src="img/lawnmower.jpeg" onclick="presentSlide(1)" alt="man seeding the football pitch">
+                <img src="img/lawnmower.jpeg" alt="man seeding the football pitch">
                 <div class="description">
                     <p>Seeding The Pitch</p>
                 </div>
             </div>
             <div class="column">
-                <img src="img/football_kits.jpeg" onclick="presentSlide(2)" alt="old football kits">
+                <img src="img/football_kits.jpeg" alt="old football kits">
                 <div class="description">
                     <p>Old Football Kits</p>
                 </div>
             </div>
             <div class="column">
-                <img src="img/dressing_room.jpeg" onclick="presentSlide(3)" alt="a dressing room">
+                <img src="img/dressing_room.jpeg" alt="a dressing room">
                 <div class="description">
                     <p>Dressing Room</p>
                 </div>
@@ -79,19 +79,19 @@
         </div>
         <div class="row">
             <div class="column">
-                <img src="img/house.jpeg" onclick="presentSlide(4)" alt="house in manchester">
+                <img src="img/house.jpeg" alt="house in manchester">
                 <div class="description">
                     <p>House in Manchester</p>
                 </div>
             </div>
             <div class="column">
-                <img src="img/merseyside.jpeg" onclick="presentSlide(5)" alt="merseyside in liverpool">
+                <img src="img/merseyside.jpeg" alt="merseyside in liverpool">
                 <div class="description">
                     <p>Merseyside in Liverpool</p>
                 </div>
             </div>
             <div class="column">
-                <img src="img/skyline.jpeg" onclick="presentSlide(6)" alt="liverpool ONE shopping centre">
+                <img src="img/skyline.jpeg" alt="liverpool ONE shopping centre">
                 <div class="description">
                     <p>Liverpool ONE Shopping Centre</p>
                 </div>
@@ -121,23 +121,21 @@
             </div>
         </div>
     </div>
-    <div class="upload">
+    <div class="upload" id="upload">
         <h1>File Upload</h1>
-        <div>
+        <div class="upload-content">
             <form method="post" enctype="multipart/form-data" action="/">
-                <table>
-                    <tr>
-                        <td>File to upload:</td>
-                        <td><input type="file" name="file" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit"/></td>
-                    </tr>
-                </table>
+                <div>File to upload:<input type="file" name="file"/></div>
+                <div><input type="submit" class="upload-button" /></div>
             </form>
         </div>
-        <div th:each="file : ${files}">
-            <img th:src="${file}" alt="uploaded image">
+        <div class="upload-image">
+            <div th:each="file : ${files}" class="column">
+                <img th:src="${file}" alt="uploaded image" />
+                <div class="description">
+                    <p>Add a description...</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="videos">

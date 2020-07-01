@@ -25,24 +25,6 @@ function showSlides(n) {
     dots[slideIndex-1].className += " active";
 }
 
-let index = 1;
-viewSlides(index);
-
-function presentSlide(n) {
-    viewSlides(index = n);
-}
-
-function viewSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("gallery");
-    if (n > slides.length) {index = 1}
-    if (n < 1) {index = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[index-1].style.display = "block";
-}
-
 let video = document.getElementById("backgroundVideo");
 let pauseButton = document.getElementById("pause");
 let playButton = document.getElementById("play");
